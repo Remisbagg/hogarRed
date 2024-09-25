@@ -1,0 +1,25 @@
+
+  <div class="ui-block">
+    <div class="ui-block-title">
+      <h6 class="title">Friends ({{friends?.length}})</h6>
+    </div>
+    <div class="ui-block-content">
+
+      <!-- W-Faved-Page -->
+
+      <ul class="widget w-faved-page">
+        <li *ngFor="let f of friends">
+          <a href="#">
+            <img src="{{f?.avatar? f?.avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0hxwLk9WbtPyfItymvpJ3fA7m13KIYF3sKDOy_YAXMqx2ZKRdwWDayxvScLqYNi7XsNg&usqp=CAU'}}" alt="author">
+          </a>
+        </li>
+<!--        <li class="all-users">-->
+<!--          <a href="#">+74</a>-->
+<!--        </li>-->
+      </ul>
+
+      <!-- .. end W-Faved-Page -->
+    </div>
+  </div>
+
+

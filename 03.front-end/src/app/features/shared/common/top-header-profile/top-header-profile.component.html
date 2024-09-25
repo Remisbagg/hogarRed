@@ -1,0 +1,48 @@
+<!-- Top Header-Profile -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="ui-block">
+        <div class="top-header">
+          <div class="top-header-thumb">
+            <img src="https://html.crumina.net/html-olympus/img/top-header1.webp" alt="nature">
+          </div>
+          <div class="profile-section">
+
+            <div class="control-block-button">
+
+              <div class="btn btn-control bg-primary more">
+                <svg class="olymp-settings-icon"><use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-settings-icon"></use></svg>
+
+                <ul class="more-dropdown more-with-triangle triangle-bottom-right">
+                  <li>
+                    <a href="#" data-toggle="modal" data-target="#update-header-photo">Update Profile Photo</a>
+                  </li>
+                  <li>
+                    <a href="#" data-toggle="modal" data-target="#update-header-photo">Update Header Photo</a>
+                  </li>
+                  <li>
+                    <a href="29-YourAccount-AccountSettings.html">Account Settings</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="top-header-author">
+            <a href="02-ProfilePage.html" class="author-thumb">
+              <img src="{{user?.avatar? user?.avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0hxwLk9WbtPyfItymvpJ3fA7m13KIYF3sKDOy_YAXMqx2ZKRdwWDayxvScLqYNi7XsNg&usqp=CAU'}}" alt="author">
+            </a>
+            <div class="author-content">
+              <a href="02-ProfilePage.html" class="h4 author-name">
+                {{(user?.firstName != null && user?.lastName != null) ? (user?.firstName + " " + user?.lastName).trim() : user?.email }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ... end Top Header-Profile -->
