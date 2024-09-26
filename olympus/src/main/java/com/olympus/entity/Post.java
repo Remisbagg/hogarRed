@@ -30,6 +30,10 @@ public class Post {
     @Column(name = "privacy", nullable = false)
     @Enumerated(EnumType.STRING)
     private Privacy privacy;
+    
+    @Column(name = "category", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Category category; 
 
     @Column(name = "created_time", nullable = false)
     private LocalDateTime createdTime;
@@ -53,6 +57,7 @@ public class Post {
     public Post() {
         this.deleteStatus = false;
         this.privacy = Privacy.PUBLIC;
+        this.category = Category.GENERAL;
         this.createdTime = LocalDateTime.now();
         this.updatedTime = LocalDateTime.now();
     }

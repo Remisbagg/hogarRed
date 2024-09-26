@@ -944,14 +944,14 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   position: relative;
   min-height: 100vh; }
   .landing-page .content-bg-wrap {
-    background-image: url("../img/landing-users.png");
+    background-image: url("src\assets\img\fondo.png");
     background-position: 0 0;
     background-repeat: repeat;
     -webkit-animation: sidedownscroll 30s linear infinite;
             animation: sidedownscroll 30s linear infinite;
     background-size: auto; }
     .landing-page .content-bg-wrap:before {
-      background-color: rgba(255, 94, 58, 0.95); }
+      background-color: rgba(232, 149, 48, 0.664); }
 
 @-webkit-keyframes sidedownscroll {
   0% {
@@ -995,7 +995,7 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
     opacity: 1;
     z-index: auto; }
   .content-bg-wrap.bg-landing:before {
-    background-color: rgba(255, 94, 58, 0.95); }
+    background-color: rgba(232, 149, 48, 0.664); }
 
 @keyframes sidedownscroll {
   0% {

@@ -1,18 +1,16 @@
 <div class="landing-page">
 
-  
-
   <div class="content-bg-wrap"></div>
 
-  <!-- ... end Header Standard Landing  -->
+  <!-- ... end Encabezado Estándar de la Página de Aterrizaje -->
   <div class="header-spacer--standard"></div>
 
   <div class="container" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; width: 100%;">
     <div class="row display-flex" style="display: flex; justify-content: center; align-items: center; width: 100%;">
         <div class="col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12" style="max-width: 500px;">
-            <!-- Login-Registration Form -->
+            <!-- Formulario de Registro e Inicio de Sesión -->
             <div class="registration-login-form" style="width: 550px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); background-color: #fff;">
-                <!-- Nav tabs -->
+                <!-- Pestañas de Navegación -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
@@ -32,12 +30,12 @@
                 <div class="d-flex justify-content-center align-items-center vh-100">
                     <div class="tab-content">
                         <div class="tab-pane active" id="home" role="tabpanel" data-mh="log-tab">
-                            <div class="title h6 text-center">Ingresa tu Correo Electronico</div>
+                            <div class="title h6 text-center">Registrar Cuenta</div>
                             <form class="content" [formGroup]="registerForm" (ngSubmit)="submitRegisterForm()">
                                 <div class="row">
                                     <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                         <div class="form-group label-floating">
-                                            <label class="control-label">Correo Electronico</label>
+                                            <label class="control-label">Correo Electrónico</label>
                                             <input class="form-control" placeholder="" type="email" formControlName="email">
                                         </div>
                                         <div class="form-group label-floating">
@@ -62,7 +60,7 @@
                                 <div class="row">
                                     <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                         <div class="form-group label-floating">
-                                            <label class="control-label">Correo Electronico</label>
+                                            <label class="control-label">Correo Electrónico</label>
                                             <input class="form-control" placeholder="" type="email" formControlName="email">
                                         </div>
                                         <div class="form-group label-floating">
@@ -75,7 +73,7 @@
                                                     <input name="optionsCheckboxes" type="checkbox" (click)="revealPass()" id="revealLoginPass"> Ver Contraseña
                                                 </label>
                                             </div>
-                                            <a href="#" class="forgot mt-2" data-toggle="modal" data-target="#restore-password" (click)="openForgotPasswordModal()">Olvide mi Contraseña</a>
+                                            <a href="#" class="forgot mt-2" data-toggle="modal" data-target="#restore-password" (click)="openForgotPasswordModal()">Olvidé mi Contraseña</a>
                                         </div>
                                         <button type="submit" class="btn btn-lg btn-primary full-width">Iniciar Sesión</button>
                                     </div>
@@ -85,47 +83,46 @@
                     </div>
                 </div>
             </div>
-            <!-- ... end Login-Registration Form  -->    
+            <!-- ... end Formulario de Registro e Inicio de Sesión -->
         </div>
     </div>
 </div>
 
+  <!-- Ventana emergente Verificar Inicio de Sesión con OTP -->
 
-  <!-- Window-popup Verify OTP Login -->
+<div class="modal fade" id="verify-otp" tabindex="-1" role="dialog" aria-labelledby="restore-password"
+aria-hidden="true" #verifyOTPLogin>
+<div class="modal-dialog window-popup restore-password-popup" role="document">
+<div class="modal-content">
+ <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Cerrar">
+   <svg class="olymp-close-icon">
+     <use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-close-icon"></use>
+   </svg>
+ </a>
 
-  <div class="modal fade" id="verify-otp" tabindex="-1" role="dialog" aria-labelledby="restore-password"
-       aria-hidden="true" #verifyOTPLogin>
-    <div class="modal-dialog window-popup restore-password-popup" role="document">
-      <div class="modal-content">
-        <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-          <svg class="olymp-close-icon">
-            <use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-close-icon"></use>
-          </svg>
-        </a>
+ <div class="modal-header">
+   <h6 class="title">Verificación</h6>
+ </div>
 
-        <div class="modal-header">
-          <h6 class="title">Verification</h6>
-        </div>
+ <div class="modal-body">
+   <form method="get" [formGroup]="OTPForm" (ngSubmit)="submitLoginByOTP()">
+     <p>Revisa tu correo electrónico para obtener el código de verificación y haz clic en el botón de inicio de sesión.
+     </p>
+     <div class="form-group label-floating">
+       <label class="control-label">Ingresa el Código</label>
+       <input class="form-control" placeholder="" type="text" value="" formControlName="code">
+     </div>
+     <button type="submit" class="btn btn-purple btn-lg full-width">Iniciar Sesión</button>
+   </form>
 
-        <div class="modal-body">
-          <form method="get" [formGroup]="OTPForm" (ngSubmit)="submitLoginByOTP()">
-            <p>Check your email for verification code and click the login button.
-            </p>
-            <div class="form-group label-floating">
-              <label class="control-label">Enter the Code</label>
-              <input class="form-control" placeholder="" type="text" value="" formControlName="code">
-            </div>
-            <button type="submit" class="btn btn-purple btn-lg full-width">Login</button>
-          </form>
+ </div>
+</div>
+</div>
+</div>
 
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- ... end Ventana emergente Verificar Inicio de Sesión con OTP -->
 
-  <!-- ... end Window-popup verify OTP Login -->
-
-  <!-- Window-popup Restore Password -->
+  <!-- Ventana emergente Restablecer Contraseña -->
 
   <div class="modal fade" id="restore-password" tabindex="-1" role="dialog" aria-labelledby="restore-password"
        aria-hidden="true" #forgotPassword>
@@ -156,7 +153,6 @@
       </div>
     </div>
   </div>
-  <!-- ... end Window-popup Restore Password -->
+  <!-- ... end Ventana emergente Restablecer Contraseña -->
 
 </div>
-

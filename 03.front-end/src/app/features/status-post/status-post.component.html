@@ -1,70 +1,62 @@
-<!-- Nav tabs -->
+<!-- Pestañas de Navegación -->
 <ul class="nav nav-tabs" role="tablist">
   <li class="nav-item">
   </li>
 </ul>
 
-<a class="nav-link active inline-items" data-toggle="tab" href="#home-1" role="tab"
-   aria-expanded="true">
-
+<a class="nav-link active inline-items" data-toggle="tab" href="#home-1" role="tab" aria-expanded="true">
   <svg class="olymp-status-icon">
     <use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-status-icon"></use>
   </svg>
-
-  <span>Status</span>
+  <span>Post</span>
 </a>
 
-<!-- Tab panes -->
+<!-- Paneles de Pestañas -->
 <div class="tab-content">
   <div class="tab-pane active" id="home-1" role="tabpanel" aria-expanded="true">
     <form [formGroup]="statusForm" (ngSubmit)="submitStatus()">
       <div class="post__author author vcard inline-items author-thumb">
         <img
           src="{{user?.avatar?user.avatar : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0hxwLk9WbtPyfItymvpJ3fA7m13KIYF3sKDOy_YAXMqx2ZKRdwWDayxvScLqYNi7XsNg&usqp=CAU'}}"
-          alt="author">
+          alt="autor">
       </div>
       <div class="form-group with-icon label-floating is-empty">
-        <label class="control-label">Share what you are thinking here...</label>
+        <label class="control-label">Comparte lo que estás pensando aquí...</label>
         <textarea class="form-control" placeholder="" formControlName="content"></textarea>
       </div>
       <div *ngIf="images.length != 0">
         <app-post-images [images]="images"></app-post-images>
       </div>
       <div class="add-options-message">
-        <a href="javascript:void(0)" class="options-message" data-toggle="tooltip" data-placement="top"
-           data-original-title="ADD PHOTOS">
+        <a href="javascript:void(0)" class="options-message" data-toggle="tooltip" data-placement="top" data-original-title="AGREGAR FOTOS">
           <svg class="olymp-camera-icon" data-toggle="modal" data-target="#update-header-photo">
             <use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
           </svg>
         </a>
-        <a href="javascript:void(0)" class="options-message" data-toggle="tooltip" data-placement="top"
-           data-original-title="WHO CAN SEE YOUR POST">
+        <a href="javascript:void(0)" class="options-message" data-toggle="tooltip" data-placement="top" data-original-title="QUIÉN PUEDE VER TU PUBLICACIÓN">
           <svg class="olymp-thunder-icon" data-toggle="modal" data-target="#update-post-privacy">
             <use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-thunder-icon"></use>
           </svg>
         </a>
-        <button type="submit" class="btn btn-primary btn-md-2">Post Status</button>
-        <button class="btn btn-md-2 btn-border-think btn-transparent c-grey" type="reset" (click)="clearForm()">Clear
-        </button>
+        <button type="submit" class="btn btn-primary btn-md-2">Publicar</button>
+        <button class="btn btn-md-2 btn-border-think btn-transparent c-grey" type="reset" (click)="clearForm()">Limpiar</button>
       </div>
     </form>
   </div>
 </div>
 
-<!-- Window-popup Update Header Photo -->
-
-<div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo"
-     aria-hidden="true" #modalUploadImages>
+<!-- Ventana Emergente Actualizar Foto de Encabezado -->
+<div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true" #modalUploadImages>
   <div class="modal-dialog window-popup update-header-photo" role="document">
     <div class="modal-content">
-      <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+      <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Cerrar">
         <svg class="olymp-close-icon">
           <use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-close-icon"></use>
         </svg>
       </a>
 
       <div class="modal-header">
-        <h6 class="title">Upload Photo</h6>
+        <h6 class="title">Subir Foto</h6>
       </div>
 
       <div class="modal-body">
@@ -73,44 +65,37 @@
           <svg class="olymp-computer-icon">
             <use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-computer-icon"></use>
           </svg>
-
-          <h6>Upload Photo</h6>
-          <span>Browse your computer.</span>
+          <h6>Subir Foto</h6>
+          <span>Buscar en tu computadora.</span>
         </a>
 
         <a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
-
           <svg class="olymp-photos-icon">
             <use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-photos-icon"></use>
           </svg>
-
-          <h6>Choose from My Photos</h6>
-          <span>Choose from your uploaded photos</span>
+          <h6>Elegir de Mis Fotos</h6>
+          <span>Elige entre tus fotos subidas</span>
         </a>
       </div>
     </div>
   </div>
 </div>
 
+<!-- ... end Ventana Emergente Actualizar Foto de Encabezado -->
 
-<!-- ... end Window-popup Update Header Photo -->
-
-<!-- Window-popup Choose from my Photo -->
-
-<div class="modal fade" id="choose-from-my-photo" tabindex="-1" role="dialog" aria-labelledby="choose-from-my-photo"
-     aria-hidden="true">
+<!-- Ventana Emergente Elegir de Mis Fotos -->
+<div class="modal fade" id="choose-from-my-photo" tabindex="-1" role="dialog" aria-labelledby="choose-from-my-photo" aria-hidden="true">
   <div class="modal-dialog window-popup choose-from-my-photo" role="document">
-
     <div class="modal-content">
-      <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+      <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Cerrar">
         <svg class="olymp-close-icon">
           <use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-close-icon"></use>
         </svg>
       </a>
       <div class="modal-header">
-        <h6 class="title">Choose from My Photos</h6>
+        <h6 class="title">Elegir de Mis Fotos</h6>
 
-        <!-- Nav tabs -->
+        <!-- Pestañas de Navegación -->
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-expanded="true">
@@ -130,185 +115,68 @@
       </div>
 
       <div class="modal-body">
-        <!-- Tab panes -->
+        <!-- Paneles de Pestañas -->
         <div class="tab-content">
           <div class="tab-pane active" id="home" role="tabpanel" aria-expanded="true">
-
+            <!-- Elegir Foto -->
             <div class="choose-photo-item" data-mh="choose-item">
               <div class="radio">
                 <label class="custom-radio">
-                  <img src="img/choose-photo1.jpg" alt="photo">
+                  <img src="img/choose-photo1.jpg" alt="foto">
                   <input type="radio" name="optionsRadios">
                 </label>
               </div>
             </div>
-            <div class="choose-photo-item" data-mh="choose-item">
-              <div class="radio">
-                <label class="custom-radio">
-                  <img src="img/choose-photo2.jpg" alt="photo">
-                  <input type="radio" name="optionsRadios">
-                </label>
-              </div>
-            </div>
-            <div class="choose-photo-item" data-mh="choose-item">
-              <div class="radio">
-                <label class="custom-radio">
-                  <img src="img/choose-photo3.jpg" alt="photo">
-                  <input type="radio" name="optionsRadios">
-                </label>
-              </div>
-            </div>
-
-            <div class="choose-photo-item" data-mh="choose-item">
-              <div class="radio">
-                <label class="custom-radio">
-                  <img src="img/choose-photo4.jpg" alt="photo">
-                  <input type="radio" name="optionsRadios">
-                </label>
-              </div>
-            </div>
-            <div class="choose-photo-item" data-mh="choose-item">
-              <div class="radio">
-                <label class="custom-radio">
-                  <img src="img/choose-photo5.jpg" alt="photo">
-                  <input type="radio" name="optionsRadios">
-                </label>
-              </div>
-            </div>
-            <div class="choose-photo-item" data-mh="choose-item">
-              <div class="radio">
-                <label class="custom-radio">
-                  <img src="img/choose-photo6.jpg" alt="photo">
-                  <input type="radio" name="optionsRadios">
-                </label>
-              </div>
-            </div>
-
-            <div class="choose-photo-item" data-mh="choose-item">
-              <div class="radio">
-                <label class="custom-radio">
-                  <img src="img/choose-photo7.jpg" alt="photo">
-                  <input type="radio" name="optionsRadios">
-                </label>
-              </div>
-            </div>
-            <div class="choose-photo-item" data-mh="choose-item">
-              <div class="radio">
-                <label class="custom-radio">
-                  <img src="img/choose-photo8.jpg" alt="photo">
-                  <input type="radio" name="optionsRadios">
-                </label>
-              </div>
-            </div>
-            <div class="choose-photo-item" data-mh="choose-item">
-              <div class="radio">
-                <label class="custom-radio">
-                  <img src="img/choose-photo9.jpg" alt="photo">
-                  <input type="radio" name="optionsRadios">
-                </label>
-              </div>
-            </div>
-
-
-            <a href="#" class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
-            <a href="#" class="btn btn-primary btn-lg btn--half-width">Confirm Photo</a>
-
+            <!-- Más fotos aquí... -->
+            <a href="#" class="btn btn-secondary btn-lg btn--half-width">Cancelar</a>
+            <a href="#" class="btn btn-primary btn-lg btn--half-width">Confirmar Foto</a>
           </div>
           <div class="tab-pane" id="profile" role="tabpanel" aria-expanded="false">
-
+            <!-- Álbumes -->
             <div class="choose-photo-item" data-mh="choose-item">
               <figure>
-                <img src="img/choose-photo10.jpg" alt="photo">
+                <img src="img/choose-photo10.jpg" alt="foto">
                 <figcaption>
-                  <a href="#">South America Vacations</a>
-                  <span>Last Added: 2 hours ago</span>
+                  <a href="#">Vacaciones en Sudamérica</a>
+                  <span>Última Añadida: hace 2 horas</span>
                 </figcaption>
               </figure>
             </div>
-            <div class="choose-photo-item" data-mh="choose-item">
-              <figure>
-                <img src="img/choose-photo11.jpg" alt="photo">
-                <figcaption>
-                  <a href="#">Photoshoot Summer 2016</a>
-                  <span>Last Added: 5 weeks ago</span>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="choose-photo-item" data-mh="choose-item">
-              <figure>
-                <img src="img/choose-photo12.jpg" alt="photo">
-                <figcaption>
-                  <a href="#">Amazing Street Food</a>
-                  <span>Last Added: 6 mins ago</span>
-                </figcaption>
-              </figure>
-            </div>
-
-            <div class="choose-photo-item" data-mh="choose-item">
-              <figure>
-                <img src="img/choose-photo13.jpg" alt="photo">
-                <figcaption>
-                  <a href="#">Graffity & Street Art</a>
-                  <span>Last Added: 16 hours ago</span>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="choose-photo-item" data-mh="choose-item">
-              <figure>
-                <img src="img/choose-photo14.jpg" alt="photo">
-                <figcaption>
-                  <a href="#">Amazing Landscapes</a>
-                  <span>Last Added: 13 mins ago</span>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="choose-photo-item" data-mh="choose-item">
-              <figure>
-                <img src="assets/img/choose-photo15.jpg" alt="photo">
-                <figcaption>
-                  <a href="#">The Majestic Canyon</a>
-                  <span>Last Added: 57 mins ago</span>
-                </figcaption>
-              </figure>
-            </div>
-
-
-            <a href="#" class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
-            <a href="#" class="btn btn-primary btn-lg disabled btn--half-width">Confirm Photo</a>
+            <!-- Más fotos aquí... -->
+            <a href="#" class="btn btn-secondary btn-lg btn--half-width">Cancelar</a>
+            <a href="#" class="btn btn-primary btn-lg disabled btn--half-width">Confirmar Foto</a>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- ... end Window-popup Choose from my Photo -->
+<!-- ... end Ventana Emergente Elegir de Mis Fotos -->
 
-<!-- Window-popup Change Post Privacy -->
-<div class="modal fade" id="update-post-privacy" tabindex="-1" role="dialog" aria-labelledby="post-privacy"
-     aria-hidden="true">
+<!-- Ventana Emergente Cambiar Privacidad de Publicación -->
+<div class="modal fade" id="update-post-privacy" tabindex="-1" role="dialog" aria-labelledby="post-privacy" aria-hidden="true">
   <div class="modal-dialog window-popup create-event" role="document">
     <div class="modal-content">
-      <a href="javascript:void(0)" class="close icon-close" data-dismiss="modal" aria-label="Close">
+      <a href="javascript:void(0)" class="close icon-close" data-dismiss="modal" aria-label="Cerrar">
         <svg class="olymp-close-icon">
           <use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-close-icon"></use>
         </svg>
       </a>
       <div class="modal-header">
-        <h6 class="title">Who can see your post</h6>
+        <h6 class="title">¿Quién puede ver tu publicación?</h6>
       </div>
       <div class="modal-body">
         <div class="form-group label-floating is-select">
-          <label class="control-label">Privacy</label>
+          <label class="control-label">Categoria</label>
           <select class="form-select">
-            <option value = "PUBLIC">PUBLIC</option>
-            <option value = "FRIENDS">FRIENDS</option>
-            <option value = "PRIVATE">PRIVATE</option>
+            <option value="PUBLIC">PÚBLICO</option>
+            <option value="FRIENDS">AMIGOS</option>
+            <option value="PRIVATE">PRIVADO</option>
           </select>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- ... end Window-popup Change Post Privacy -->
+<!-- ... end Ventana Emergente Cambiar Privacidad de Publicación -->

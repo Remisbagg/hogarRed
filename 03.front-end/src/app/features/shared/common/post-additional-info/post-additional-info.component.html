@@ -39,25 +39,25 @@
 
     <div *ngIf="post.likes.length ==1 && checkLiked(post.likes)">
       <div class="names-people-likes">
-        <a href="javascript:void(0)">You</a> liked this
+        <a href="javascript:void(0)">Te</a> gusto esto
       </div>
     </div>
 
     <div *ngIf="post.likes.length ==1 && !checkLiked(post.likes)">
       <div class="names-people-likes">
-        <a href="javascript:void(0)">{{post?.likes[0].email}}</a> liked this
+        <a href="javascript:void(0)">{{post?.likes[0].email}}</a> le gusta esto
       </div>
     </div>
 
     <div *ngIf="post.likes.length >1 && checkLiked(post.likes)">
       <div class="names-people-likes">
-        <a href="javascript:void(0)">You</a> and {{post.likes.length-1}} others liked this
+        <a href="javascript:void(0)">A ti</a> y {{post.likes.length-1}} a otros les gustó esto
       </div>
     </div>
 
     <div *ngIf="post.likes.length >1 && !checkLiked(post.likes)">
       <div class="names-people-likes">
-        <a href="javascript:void(0)">{{post.likes.length}} people liked this </a>
+        <a href="javascript:void(0)">{{post.likes.length}} a la gente le gusta esto </a>
       </div>
     </div>
   </div>
